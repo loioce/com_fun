@@ -1,0 +1,33 @@
+<!DOCType html>
+<html>
+    <head></head>
+    <body>
+        <input type="text" id="username" placeholder="输入用户名">
+        <input type="text" id="userage" placeholder="输入用户年龄">
+        <button type="button" id="add">添加</button>
+        <input type="text" id="deleId" placeholder="请输入要删除的用户名">
+        <button type="button" id="dele">删除</button>
+        <input type="text" id="searchkey" placeholder="请输入要查找的key">
+        <button type="button" id="search">查询</button>
+    </body>
+    <script src="indexDB.js"></script>
+    <script>
+        var i=0;
+        document.querySelector('#add').addEventListener('click',()=>{
+            oparetIndexedDB.addDBData(myDB.db,'students',{
+                id:'10000'+i,
+                name:document.querySelector('#username').value,
+                age:document.querySelector('#userage').value
+            });
+            i++;
+        });
+        document.querySelector('#dele').addEventListener('click',()=>{
+            oparetIndexedDB.deleDBData(myDB.db,'students',document.querySelector('#deleId').value);
+        });
+        document.querySelector('#search').addEventListener('click',()=>{
+            var aa = oparetIndexedDB.getDataByKey(myDB.db,'students',document.querySelector('#searchkey').value,(res)=>{
+                console.log(res);
+            });
+        });
+    </script>
+</html>

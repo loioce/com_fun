@@ -1,0 +1,109 @@
+/*****checkbox style***************
+<div class="opt">
+    <input class="magic-checkbox" type="checkbox" name="layout" id="c1">
+    <label for="c1">Normal</label>
+</div>  
+********/
+.opt{
+    height: 30px;
+   line-height: 24px;
+}
+.opt [type=checkbox]{
+   position: absolute;
+   display: none;
+}
+.opt [type=checkbox] + label{
+   position: relative;
+   display: block;
+   padding-left: 30px;
+   cursor: pointer;
+   vertical-align: middle;
+   line-height:13px;
+}
+
+.opt [type=checkbox] + label:before {
+   position: absolute;
+   top: 0;
+   left: 0;
+   display: inline-block;
+   width: 20px;
+   height: 20px;
+   content: '';
+   border: 1px solid #c0c0c0;
+   border-radius: 3px;
+}
+.opt [type=checkbox]:checked + label:before {
+   border: #3e97eb;
+   background: #3e97eb;
+}
+.opt [type=checkbox]:checked + label:before {
+   animation-name: none;
+}
+.opt [type=checkbox]:checked + label:after {
+   display: block;
+}
+.opt [type=checkbox] + label:after {
+   position: absolute;
+   display: none;
+   content: '';
+}
+.opt [type=checkbox] + label:after {
+   top: 2px;
+   left: 7px;
+   box-sizing: border-box;
+   width: 6px;
+   height: 12px;
+   transform: rotate(45deg);
+   border-width: 2px;
+   border-style: solid;
+   border-color: #fff;
+   border-top: 0;
+   border-left: 0;
+}
+
+/***flex兼容性**/
+.flex{
+	display:-webkit-box;
+	display:-moz-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex;
+}
+.flex-item{
+	-webkit-box-flex: 1.0;
+    -moz-flex-grow: 1;
+    -webkit-flex-grow: 1;
+	flex-grow: 1;
+}
+.flex-item2{
+    flex-basis:25%;
+}
+.flex-item5{
+	flex-basis:50%;
+}
+.flex-item6{
+	flex-basis:60%;
+}
+.flex-item4{
+	flex-basis:40%;
+}
+.flex-center{
+	-webkit-box-pack:center;
+	-moz-justify-content:center;
+	-webkit-justify-content:center;
+	justify-content:center;
+}
+.flex-between{
+	-webkit-box-pack:space-between;
+	-moz-justify-content:space-between;
+	-webkit-justify-content:space-between;
+	justify-content:space-between;
+}
+.flex-colume{
+	-webkit-box-direction:normal;
+	-webkit-box-orient:vertical;
+	-moz-flex-direction:column;
+	-ms-flex-direction:column;
+	-webkit-flex-direction:column;
+	flex-direction:column;
+}
